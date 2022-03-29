@@ -51,7 +51,7 @@ namespace PingPong
             switch (e.KeyChar)
             {
                 case 'w':
-                    if (!LeftPaddle.CheckCollection(UpperWall)) {
+                    if (!LeftPaddle.CheckCollision(UpperWall)) {
                         LeftPaddle.IsMovingUp = true;
                         LeftPaddle.Moving();
                     } else {
@@ -60,7 +60,7 @@ namespace PingPong
                     }
                     break;
                 case 's':
-                    if (!LeftPaddle.CheckCollection(BottomWall)) {
+                    if (!LeftPaddle.CheckCollision(BottomWall)) {
                         LeftPaddle.IsMovingUp = false;
                         LeftPaddle.Moving();
                     } else {
@@ -69,7 +69,7 @@ namespace PingPong
                     }
                     break;
                 case 'i':
-                    if (!RightPaddle.CheckCollection(UpperWall)) {
+                    if (!RightPaddle.CheckCollision(UpperWall)) {
                         RightPaddle.IsMovingUp = true;
                         RightPaddle.Moving();
                     } else {
@@ -78,7 +78,7 @@ namespace PingPong
                     }
                     break;
                 case 'k':
-                    if (!RightPaddle.CheckCollection(BottomWall)) {
+                    if (!RightPaddle.CheckCollision(BottomWall)) {
                         RightPaddle.IsMovingUp = false;
                         RightPaddle.Moving();
                     } else {
@@ -93,19 +93,19 @@ namespace PingPong
         private void timer1_Tick(object sender, EventArgs e) {
             pictureBox1.Refresh();
 
-            if (Ball.CheckCollection(UpperWall)) {
+            if (Ball.CheckCollision(UpperWall)) {
                 Ball.IsMovingUp = false;
             }
 
-            if (Ball.CheckCollection(BottomWall)) {
+            if (Ball.CheckCollision(BottomWall)) {
                 Ball.IsMovingUp = true;
             }
 
-            if (Ball.CheckCollection(RightPaddle)) {
+            if (Ball.CheckCollision(RightPaddle)) {
                 Ball.IsMovingLeft = true;
             }
 
-            if (Ball.CheckCollection(LeftPaddle)) {
+            if (Ball.CheckCollision(LeftPaddle)) {
                 Ball.IsMovingLeft = false;
             }
 

@@ -78,9 +78,8 @@ namespace PingPong.Object.Impl
             Position = new Point(Position.X + Speed, Position.Y);
         }
 
-        public override bool CheckCollection(GameObject ByGameObject)
-        {
-            bool IsCollection = base.CheckCollection(ByGameObject);
+        public override bool CheckCollision(GameObject ByGameObject) {
+            bool IsCollection = base.CheckCollision(ByGameObject);
             if (IsCollection) {
                 PlaySound();
             }
